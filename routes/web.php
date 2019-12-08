@@ -10,7 +10,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Task;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('tasks');
+});
+
+
+Route::post('/task', function (Request $request) {
+    //
+});
+
+Route::delete('/task/{id}', function ($id) {
+    //
 });

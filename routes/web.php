@@ -11,6 +11,8 @@
 |
 */
 use App\Task;
+// use Dotenv\Validator;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -19,7 +21,16 @@ Route::get('/', function () {
 
 
 Route::post('/task', function (Request $request) {
-    //
+    $validator = Validator::make($request->all(), [
+        'name' => 'required|max:255',
+    ]);
+
+    if ($validator->fails()) {
+        return redirect('/')
+            ->withInput()
+            ->withErrors($validator);
+    }
+
 });
 
 Route::delete('/task/{id}', function ($id) {

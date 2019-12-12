@@ -12,7 +12,7 @@
 */
 use App\Task;
 // use Dotenv\Validator;
-use Illuminate\Support\Facades\Validator;
+// use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {

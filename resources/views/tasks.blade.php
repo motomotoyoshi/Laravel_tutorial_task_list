@@ -35,9 +35,36 @@
                     </form>
                 </div>
             </div>
+
+        {{-- TODO: 現在のタスク --}}
+        @if (count($tasks) > 0)
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    現在のタスク
+                </div>
+
+                <div class="panel-body">
+                    <table class="table table-striped task-table">
+                        <thead>
+                            <th>Task</th>
+                            <th>&nbsp;</th>
+                        </thead>
+                        <tbody>
+                            @foreach ($tasks as $task)
+                                <tr>
+                                    <td class="table-text">
+                                        <div>{{ $task->name }}</div>
+                                    </td>
+                                    <td>
+                                        {{-- TODO: 削除ボタン --}}
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            @endif
         </div>
-
     </div>
-
-    {{-- TODO: 現在のタスク --}}
 @endsection
